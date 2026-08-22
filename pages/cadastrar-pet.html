@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet - Cadastrar Pet</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="menu-lateral">
+
+            <h1>Hotel Pet</h1>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    Início
+                </a>
+
+                <a
+                    href="pets.html"
+                    class="menu-ativo"
+                >
+                    Pet
+                </a>
+
+                <a href="usuarios.html">
+                    Usuário
+                </a>
+
+                <a href="configuracoes.html">
+                    Configurações
+                </a>
+
+                <a href="reservas.html">
+                    Reservas
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="conteudo">
+
+            <header class="topo">
+
+                <div></div>
+
+                <a
+                    href="perfil.html"
+                    class="perfil-topo"
+                >
+
+                    <span class="icone-usuario">
+                        O
+                    </span>
+
+                    <span>
+                        Camila Oliveira
+                    </span>
+
+                </a>
+
+            </header>
+
+            <section class="area-principal">
+
+                <div class="breadcrumb">
+
+                    <a href="dashboard.html">
+                        Home
+                    </a>
+
+                    <span>/</span>
+
+                    <a href="pets.html">
+                        Pets
+                    </a>
+
+                    <span>/</span>
+
+                    <strong>
+                        Cadastrar Pet
+                    </strong>
+
+                </div>
+
+                <div class="cabecalho-pagina">
+
+                    <div>
+
+                        <h2>
+                            Cadastrar Pet
+                        </h2>
+
+                        <p>
+                            Preencha os dados para cadastrar um novo pet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <section class="painel-formulario">
+
+                    <form
+                        action="pets.html"
+                        method="get"
+                        enctype="multipart/form-data"
+                    >
+
+                        <div class="grupo-formulario">
+
+                            <h3>
+                                Dados do Pet
+                            </h3>
+
+                            <div class="linha-formulario">
+
+                                <div class="campo-formulario">
+
+                                    <label for="nome">
+                                        Nome do Pet
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="nome"
+                                        name="nome"
+                                        placeholder="Digite o nome do pet"
+                                        required
+                                    >
+
+                                </div>
+
+                                <div class="campo-formulario">
+
+                                    <label for="raca">
+                                        Raça
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="raca"
+                                        name="raca"
+                                        placeholder="Digite a raça"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+                            <div class="linha-formulario">
+
+                                <div class="campo-formulario">
+
+                                    <label for="idade">
+                                        Idade
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="idade"
+                                        name="idade"
+                                        min="0"
+                                        max="30"
+                                        placeholder="Idade em anos"
+                                        required
+                                    >
+
+                                </div>
+
+                                <div class="campo-formulario">
+
+                                    <label for="sexo">
+                                        Sexo
+                                    </label>
+
+                                    <select
+                                        id="sexo"
+                                        name="sexo"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Selecione
+                                        </option>
+
+                                        <option value="macho">
+                                            Macho
+                                        </option>
+
+                                        <option value="femea">
+                                            Fêmea
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                            <div class="linha-formulario">
+
+                                <div class="campo-formulario">
+
+                                    <label for="porte">
+                                        Porte
+                                    </label>
+
+                                    <select
+                                        id="porte"
+                                        name="porte"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Selecione
+                                        </option>
+
+                                        <option value="pequeno">
+                                            Pequeno
+                                        </option>
+
+                                        <option value="medio">
+                                            Médio
+                                        </option>
+
+                                        <option value="grande">
+                                            Grande
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="campo-formulario">
+
+                                    <label for="tutor">
+                                        Tutor
+                                    </label>
+
+                                    <select
+                                        id="tutor"
+                                        name="tutor"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Selecione o tutor
+                                        </option>
+
+                                        <option value="rafael">
+                                            Rafael Costa
+                                        </option>
+
+                                        <option value="juliana">
+                                            Juliana Mendes
+                                        </option>
+
+                                        <option value="pedro">
+                                            Pedro Henrique
+                                        </option>
+
+                                        <option value="lucas">
+                                            Lucas Almeida
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="grupo-formulario">
+
+                            <h3>
+                                Informações adicionais
+                            </h3>
+
+                            <div class="campo-formulario campo-completo">
+
+                                <label for="observacoes">
+                                    Observações
+                                </label>
+
+                                <textarea
+                                    id="observacoes"
+                                    name="observacoes"
+                                    rows="5"
+                                    placeholder="Digite informações importantes sobre o pet"
+                                ></textarea>
+
+                            </div>
+
+                            <div class="campo-formulario campo-completo">
+
+                                <label for="foto">
+                                    Foto do Pet
+                                </label>
+
+                                <input
+                                    type="file"
+                                    id="foto"
+                                    name="foto"
+                                    accept="image/*"
+                                >
+
+                            </div>
+
+                        </div>
+
+                        <div class="acoes-formulario">
+
+                            <button
+                                type="submit"
+                                class="botao-principal"
+                            >
+                                Salvar Pet
+                            </button>
+
+                            <button
+                                type="reset"
+                                class="botao-secundario"
+                            >
+                                Limpar
+                            </button>
+
+                            <a
+                                href="pets.html"
+                                class="botao-cancelar"
+                            >
+                                Cancelar
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

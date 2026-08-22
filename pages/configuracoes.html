@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet - Configurações</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="menu-lateral">
+
+            <h1>Hotel Pet</h1>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    Início
+                </a>
+
+                <a href="pets.html">
+                    Pet
+                </a>
+
+                <a href="usuarios.html">
+                    Usuário
+                </a>
+
+                <a
+                    href="configuracoes.html"
+                    class="menu-ativo"
+                >
+                    Configurações
+                </a>
+
+                <a href="reservas.html">
+                    Reservas
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="conteudo">
+
+            <header class="topo">
+
+                <div></div>
+
+                <a
+                    href="perfil.html"
+                    class="perfil-topo"
+                >
+
+                    <span class="icone-usuario">
+                        O
+                    </span>
+
+                    <span>
+                        Camila Oliveira
+                    </span>
+
+                </a>
+
+            </header>
+
+            <section class="area-principal">
+
+                <div class="breadcrumb">
+
+                    <a href="dashboard.html">
+                        Home
+                    </a>
+
+                    <span>/</span>
+
+                    <strong>
+                        Configurações
+                    </strong>
+
+                </div>
+
+                <div class="cabecalho-pagina">
+
+                    <div>
+
+                        <h2>
+                            Configurações
+                        </h2>
+
+                        <p>
+                            Gerencie as configurações do Hotel Pet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <section class="painel-formulario">
+
+                    <form
+                        action="configuracoes.html"
+                        method="get"
+                    >
+
+                        <div class="grupo-formulario">
+
+                            <h3>
+                                Configurações da hospedagem
+                            </h3>
+
+                            <div class="linha-formulario">
+
+                                <div class="campo-formulario">
+
+                                    <label for="valor-diaria">
+                                        Valor da diária
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="valor-diaria"
+                                        name="valor-diaria"
+                                        value="R$ 95,00"
+                                        required
+                                    >
+
+                                </div>
+
+                                <div class="campo-formulario">
+
+                                    <label for="vagas">
+                                        Número de vagas disponíveis
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="vagas"
+                                        name="vagas"
+                                        value="5"
+                                        min="1"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="grupo-formulario">
+
+                            <h3>
+                                Informações do sistema
+                            </h3>
+
+                            <div class="linha-formulario">
+
+                                <div class="campo-formulario">
+
+                                    <label for="nome-hotel">
+                                        Nome do estabelecimento
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="nome-hotel"
+                                        name="nome-hotel"
+                                        value="Hotel Pet"
+                                        required
+                                    >
+
+                                </div>
+
+                                <div class="campo-formulario">
+
+                                    <label for="responsavel">
+                                        Gerente responsável
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="responsavel"
+                                        name="responsavel"
+                                        value="Camila Oliveira"
+                                        readonly
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="grupo-formulario">
+
+                            <h3>
+                                Preferências
+                            </h3>
+
+                            <div class="linha-formulario">
+
+                                <div class="campo-formulario">
+
+                                    <label for="check-in">
+                                        Horário de entrada
+                                    </label>
+
+                                    <input
+                                        type="time"
+                                        id="check-in"
+                                        name="check-in"
+                                        value="08:00"
+                                    >
+
+                                </div>
+
+                                <div class="campo-formulario">
+
+                                    <label for="check-out">
+                                        Horário de saída
+                                    </label>
+
+                                    <input
+                                        type="time"
+                                        id="check-out"
+                                        name="check-out"
+                                        value="18:00"
+                                    >
+
+                                </div>
+
+                            </div>
+
+                            <div class="campo-formulario campo-completo">
+
+                                <label for="observacoes">
+                                    Observações gerais
+                                </label>
+
+                                <textarea
+                                    id="observacoes"
+                                    name="observacoes"
+                                    rows="5"
+                                    placeholder="Digite informações gerais sobre o funcionamento do hotel."
+                                >O Hotel Pet oferece hospedagem para cães e gatos.</textarea>
+
+                            </div>
+
+                        </div>
+
+                        <div class="acoes-formulario">
+
+                            <button
+                                type="submit"
+                                class="botao-principal"
+                            >
+                                Salvar Configurações
+                            </button>
+
+                            <button
+                                type="reset"
+                                class="botao-secundario"
+                            >
+                                Restaurar
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

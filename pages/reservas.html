@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet - Reservas</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="menu-lateral">
+
+            <h1>Hotel Pet</h1>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    Início
+                </a>
+
+                <a href="pets.html">
+                    Pet
+                </a>
+
+                <a href="usuarios.html">
+                    Usuário
+                </a>
+
+                <a href="configuracoes.html">
+                    Configurações
+                </a>
+
+                <a
+                    href="reservas.html"
+                    class="menu-ativo"
+                >
+                    Reservas
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="conteudo">
+
+            <header class="topo">
+
+                <div></div>
+
+                <a
+                    href="perfil.html"
+                    class="perfil-topo"
+                >
+
+                    <span class="icone-usuario">
+                        O
+                    </span>
+
+                    <span>
+                        Camila Oliveira
+                    </span>
+
+                </a>
+
+            </header>
+
+            <section class="area-principal">
+
+                <div class="breadcrumb">
+
+                    <a href="dashboard.html">
+                        Home
+                    </a>
+
+                    <span>/</span>
+
+                    <strong>
+                        Reservas
+                    </strong>
+
+                </div>
+
+                <div class="cabecalho-pagina">
+
+                    <div>
+
+                        <h2>
+                            Reservas
+                        </h2>
+
+                        <p>
+                            Consulte e gerencie as reservas do Hotel Pet.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="cadastrar-reserva.html"
+                        class="botao-principal"
+                    >
+                        Nova Reserva
+                    </a>
+
+                </div>
+
+                <section class="painel-filtros">
+
+                    <form
+                        action="reservas.html"
+                        method="get"
+                    >
+
+                        <div class="linha-filtros">
+
+                            <div class="campo-filtro">
+
+                                <label for="pet">
+                                    Pet
+                                </label>
+
+                                <input
+                                    type="search"
+                                    id="pet"
+                                    name="pet"
+                                    placeholder="Nome do pet"
+                                >
+
+                            </div>
+
+                            <div class="campo-filtro">
+
+                                <label for="tutor">
+                                    Tutor
+                                </label>
+
+                                <input
+                                    type="search"
+                                    id="tutor"
+                                    name="tutor"
+                                    placeholder="Nome do tutor"
+                                >
+
+                            </div>
+
+                            <div class="campo-filtro">
+
+                                <label for="status">
+                                    Status
+                                </label>
+
+                                <select
+                                    id="status"
+                                    name="status"
+                                >
+
+                                    <option value="">
+                                        Todos
+                                    </option>
+
+                                    <option value="agendada">
+                                        Agendada
+                                    </option>
+
+                                    <option value="confirmada">
+                                        Confirmada
+                                    </option>
+
+                                    <option value="finalizada">
+                                        Finalizada
+                                    </option>
+
+                                    <option value="cancelada">
+                                        Cancelada
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="botao-secundario"
+                            >
+                                Pesquisar
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+                <section class="painel-dashboard">
+
+                    <div class="cabecalho-secao">
+
+                        <h3>
+                            Reservas cadastradas
+                        </h3>
+
+                        <span>
+                            3 reservas encontradas
+                        </span>
+
+                    </div>
+
+                    <div class="tabela-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Reserva
+                                    </th>
+
+                                    <th>
+                                        Pet
+                                    </th>
+
+                                    <th>
+                                        Tutor
+                                    </th>
+
+                                    <th>
+                                        Entrada
+                                    </th>
+
+                                    <th>
+                                        Saída
+                                    </th>
+
+                                    <th>
+                                        Valor
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Ações
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        101
+                                    </td>
+
+                                    <td>
+                                        Max
+                                    </td>
+
+                                    <td>
+                                        Rafael Costa
+                                    </td>
+
+                                    <td>
+                                        22/08/2026
+                                    </td>
+
+                                    <td>
+                                        26/08/2026
+                                    </td>
+
+                                    <td>
+                                        R$ 380,00
+                                    </td>
+
+                                    <td>
+                                        Confirmada
+                                    </td>
+
+                                    <td>
+
+                                        <a href="visualizar-reserva.html">
+                                            Visualizar
+                                        </a>
+
+                                        <a href="editar-reserva.html">
+                                            Editar
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        102
+                                    </td>
+
+                                    <td>
+                                        Belinha
+                                    </td>
+
+                                    <td>
+                                        Juliana Mendes
+                                    </td>
+
+                                    <td>
+                                        23/08/2026
+                                    </td>
+
+                                    <td>
+                                        25/08/2026
+                                    </td>
+
+                                    <td>
+                                        R$ 190,00
+                                    </td>
+
+                                    <td>
+                                        Agendada
+                                    </td>
+
+                                    <td>
+
+                                        <a href="visualizar-reserva.html">
+                                            Visualizar
+                                        </a>
+
+                                        <a href="editar-reserva.html">
+                                            Editar
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        103
+                                    </td>
+
+                                    <td>
+                                        Nina
+                                    </td>
+
+                                    <td>
+                                        Pedro Henrique
+                                    </td>
+
+                                    <td>
+                                        24/08/2026
+                                    </td>
+
+                                    <td>
+                                        29/08/2026
+                                    </td>
+
+                                    <td>
+                                        R$ 475,00
+                                    </td>
+
+                                    <td>
+                                        Confirmada
+                                    </td>
+
+                                    <td>
+
+                                        <a href="visualizar-reserva.html">
+                                            Visualizar
+                                        </a>
+
+                                        <a href="editar-reserva.html">
+                                            Editar
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

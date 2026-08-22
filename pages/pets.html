@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet - Pets</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="menu-lateral">
+
+            <h1>Hotel Pet</h1>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    Início
+                </a>
+
+                <a
+                    href="pets.html"
+                    class="menu-ativo"
+                >
+                    Pet
+                </a>
+
+                <a href="usuarios.html">
+                    Usuário
+                </a>
+
+                <a href="configuracoes.html">
+                    Configurações
+                </a>
+
+                <a href="reservas.html">
+                    Reservas
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="conteudo">
+
+            <header class="topo">
+
+                <div></div>
+
+                <a
+                    href="perfil.html"
+                    class="perfil-topo"
+                >
+
+                    <span class="icone-usuario">
+                        O
+                    </span>
+
+                    <span>
+                        Camila Oliveira
+                    </span>
+
+                </a>
+
+            </header>
+
+            <section class="area-principal">
+
+                <div class="breadcrumb">
+
+                    <a href="dashboard.html">
+                        Home
+                    </a>
+
+                    <span>/</span>
+
+                    <strong>
+                        Pets
+                    </strong>
+
+                </div>
+
+                <div class="cabecalho-pagina">
+
+                    <div>
+
+                        <h2>
+                            Pets
+                        </h2>
+
+                        <p>
+                            Consulte e gerencie os pets cadastrados no Hotel Pet.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="cadastrar-pet.html"
+                        class="botao-principal"
+                    >
+                        Novo Pet
+                    </a>
+
+                </div>
+
+                <section class="painel-filtros">
+
+                    <form
+                        action="pets.html"
+                        method="get"
+                    >
+
+                        <div class="campo-filtro">
+
+                            <label for="pesquisa">
+                                Pesquisar
+                            </label>
+
+                            <input
+                                type="search"
+                                id="pesquisa"
+                                name="pesquisa"
+                                placeholder="Digite o nome do pet"
+                            >
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="botao-secundario"
+                        >
+                            Pesquisar
+                        </button>
+
+                    </form>
+
+                </section>
+
+                <section class="painel-dashboard">
+
+                    <div class="cabecalho-secao">
+
+                        <h3>
+                            Pets cadastrados
+                        </h3>
+
+                        <span>
+                            4 pets encontrados
+                        </span>
+
+                    </div>
+
+                    <div class="tabela-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        ID
+                                    </th>
+
+                                    <th>
+                                        Pet
+                                    </th>
+
+                                    <th>
+                                        Raça
+                                    </th>
+
+                                    <th>
+                                        Idade
+                                    </th>
+
+                                    <th>
+                                        Tutor
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Ações
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        001
+                                    </td>
+
+                                    <td>
+                                        Max
+                                    </td>
+
+                                    <td>
+                                        Labrador
+                                    </td>
+
+                                    <td>
+                                        4 anos
+                                    </td>
+
+                                    <td>
+                                        Rafael Costa
+                                    </td>
+
+                                    <td>
+                                        Ativo
+                                    </td>
+
+                                    <td>
+
+                                        <a href="visualizar-pet.html">
+                                            Visualizar
+                                        </a>
+
+                                        <a href="editar-pet.html">
+                                            Editar
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        002
+                                    </td>
+
+                                    <td>
+                                        Belinha
+                                    </td>
+
+                                    <td>
+                                        Shih-tzu
+                                    </td>
+
+                                    <td>
+                                        3 anos
+                                    </td>
+
+                                    <td>
+                                        Juliana Mendes
+                                    </td>
+
+                                    <td>
+                                        Ativo
+                                    </td>
+
+                                    <td>
+
+                                        <a href="visualizar-pet.html">
+                                            Visualizar
+                                        </a>
+
+                                        <a href="editar-pet.html">
+                                            Editar
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        003
+                                    </td>
+
+                                    <td>
+                                        Nina
+                                    </td>
+
+                                    <td>
+                                        Poodle
+                                    </td>
+
+                                    <td>
+                                        5 anos
+                                    </td>
+
+                                    <td>
+                                        Pedro Henrique
+                                    </td>
+
+                                    <td>
+                                        Ativo
+                                    </td>
+
+                                    <td>
+
+                                        <a href="visualizar-pet.html">
+                                            Visualizar
+                                        </a>
+
+                                        <a href="editar-pet.html">
+                                            Editar
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        004
+                                    </td>
+
+                                    <td>
+                                        Caramelo
+                                    </td>
+
+                                    <td>
+                                        SRD
+                                    </td>
+
+                                    <td>
+                                        2 anos
+                                    </td>
+
+                                    <td>
+                                        Lucas Almeida
+                                    </td>
+
+                                    <td>
+                                        Ativo
+                                    </td>
+
+                                    <td>
+
+                                        <a href="visualizar-pet.html">
+                                            Visualizar
+                                        </a>
+
+                                        <a href="editar-pet.html">
+                                            Editar
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

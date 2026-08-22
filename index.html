@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Pet - Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="pagina-login">
+
+    <main class="login-container">
+
+        <section class="login-imagem">
+
+            <img src="imagens/hotel-pet.png" alt="Hotel Pet">
+
+        </section>
+
+        <section class="login-formulario">
+
+            <div class="login-cabecalho">
+
+                <h1>Hotel Pet</h1>
+
+                <p>
+                    Sistema de gerenciamento de hospedagem para Pets
+                </p>
+
+            </div>
+
+            <h2>Entrar</h2>
+
+            <form action="pages/dashboard.html" method="get">
+
+                <div class="campo-login">
+
+                    <label for="usuario">Usuário</label>
+
+                    <input
+                        type="text"
+                        id="usuario"
+                        name="usuario"
+                        placeholder="Digite seu usuário"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo-login">
+
+                    <label for="senha">Senha</label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Digite sua senha"
+                        required
+                    >
+
+                </div>
+
+                <div class="opcoes-login">
+
+                    <label class="lembrar-login">
+
+                        <input
+                            type="checkbox"
+                            name="lembrar"
+                        >
+
+                        <span>Lembrar meus dados</span>
+
+                    </label>
+
+                    <a href="#">Esqueci minha senha</a>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="botao-entrar"
+                >
+                    Entrar
+                </button>
+
+            </form>
+
+            <div class="separador-login">
+
+                <span>ou</span>
+
+            </div>
+
+            <div class="login-google">
+
+                <button type="button">
+
+                    <span class="rede-google">G</span>
+
+                    Continuar com Google
+
+                </button>
+
+            </div>
+
+            <p class="criar-conta-login">
+
+                Ainda não possui uma conta?
+
+                <a href="pages/criar-conta.html">
+                    Criar uma conta
+                </a>
+
+            </p>
+
+            <a
+                href="pages/dashboard.html"
+                class="acesso-gerente"
+            >
+                Acessar como Gerente
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

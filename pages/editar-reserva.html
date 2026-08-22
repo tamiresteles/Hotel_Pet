@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Pet - Editar Reserva</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="menu-lateral">
+
+            <h1>Hotel Pet</h1>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    Início
+                </a>
+
+                <a href="pets.html">
+                    Pet
+                </a>
+
+                <a href="usuarios.html">
+                    Usuário
+                </a>
+
+                <a href="configuracoes.html">
+                    Configurações
+                </a>
+
+                <a
+                    href="reservas.html"
+                    class="menu-ativo"
+                >
+                    Reservas
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="conteudo">
+
+            <header class="topo">
+
+                <div></div>
+
+                <a
+                    href="perfil.html"
+                    class="perfil-topo"
+                >
+
+                    <span class="icone-usuario">
+                        O
+                    </span>
+
+                    <span>
+                        Camila Oliveira
+                    </span>
+
+                </a>
+
+            </header>
+
+            <section class="area-principal">
+
+                <div class="breadcrumb">
+
+                    <a href="dashboard.html">
+                        Home
+                    </a>
+
+                    <span>/</span>
+
+                    <a href="reservas.html">
+                        Reservas
+                    </a>
+
+                    <span>/</span>
+
+                    <strong>
+                        Editar Reserva
+                    </strong>
+
+                </div>
+
+                <div class="cabecalho-pagina">
+
+                    <div>
+
+                        <h2>
+                            Editar Reserva
+                        </h2>
+
+                        <p>
+                            Altere os dados da reserva cadastrada.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <section class="painel-formulario">
+
+                    <form
+                        action="reservas.html"
+                        method="get"
+                    >
+
+                        <div class="grupo-formulario">
+
+                            <h3>
+                                Dados da Reserva
+                            </h3>
+
+                            <div class="linha-formulario">
+
+                                <div class="campo-formulario">
+
+                                    <label for="id">
+                                        Número da reserva
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="id"
+                                        name="id"
+                                        value="101"
+                                        readonly
+                                    >
+
+                                </div>
+
+                                <div class="campo-formulario">
+
+                                    <label for="status">
+                                        Status
+                                    </label>
+
+                                    <select
+                                        id="status"
+                                        name="status"
+                                        required
+                                    >
+
+                                        <option value="confirmada" selected>
+                                            Confirmada
+                                        </option>
+
+                                        <option value="agendada">
+                                            Agendada
+                                        </option>
+
+                                        <option value="finalizada">
+                                            Finalizada
+                                        </option>
+
+                                        <option value="cancelada">
+                                            Cancelada
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                            <div class="linha-formulario">
+
+                                <div class="campo-formulario">
+
+                                    <label for="pet">
+                                        Pet
+                                    </label>
+
+                                    <select
+                                        id="pet"
+                                        name="pet"
+                                        required
+                                    >
+
+                                        <option value="max" selected>
+                                            Max
+                                        </option>
+
+                                        <option value="belinha">
+                                            Belinha
+                                        </option>
+
+                                        <option value="nina">
+                                            Nina
+                                        </option>
+
+                                        <option value="caramelo">
+                                            Caramelo
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="campo-formulario">
+
+                                    <label for="tutor">
+                                        Tutor
+                                    </label>
+
+                                    <select
+                                        id="tutor"
+                                        name="tutor"
+                                        required
+                                    >
+
+                                        <option value="rafael" selected>
+                                            Rafael Costa
+                                        </option>
+
+                                        <option value="juliana">
+                                            Juliana Mendes
+                                        </option>
+
+                                        <option value="pedro">
+                                            Pedro Henrique
+                                        </option>
+
+                                        <option value="lucas">
+                                            Lucas Almeida
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                            <div class="linha-formulario">
+
+                                <div class="campo-formulario">
+
+                                    <label for="entrada">
+                                        Data de entrada
+                                    </label>
+
+                                    <input
+                                        type="date"
+                                        id="entrada"
+                                        name="entrada"
+                                        value="2026-08-22"
+                                        required
+                                    >
+
+                                </div>
+
+                                <div class="campo-formulario">
+
+                                    <label for="saida">
+                                        Data de saída
+                                    </label>
+
+                                    <input
+                                        type="date"
+                                        id="saida"
+                                        name="saida"
+                                        value="2026-08-26"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="grupo-formulario">
+
+                            <h3>
+                                Serviços e cuidados
+                            </h3>
+
+                            <div class="linha-formulario">
+
+                                <div class="campo-formulario">
+
+                                    <label for="alimentacao">
+                                        Alimentação
+                                    </label>
+
+                                    <select
+                                        id="alimentacao"
+                                        name="alimentacao"
+                                        required
+                                    >
+
+                                        <option value="hotel" selected>
+                                            Alimentação do Hotel
+                                        </option>
+
+                                        <option value="propria">
+                                            Alimentação própria
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="campo-formulario">
+
+                                    <label for="medicacao">
+                                        Necessita de medicação?
+                                    </label>
+
+                                    <select
+                                        id="medicacao"
+                                        name="medicacao"
+                                        required
+                                    >
+
+                                        <option value="nao" selected>
+                                            Não
+                                        </option>
+
+                                        <option value="sim">
+                                            Sim
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                            <div class="campo-formulario campo-completo">
+
+                                <label for="observacoes">
+                                    Observações
+                                </label>
+
+                                <textarea
+                                    id="observacoes"
+                                    name="observacoes"
+                                    rows="5"
+                                >Max deve receber alimentação duas vezes ao dia.</textarea>
+
+                            </div>
+
+                        </div>
+
+                        <div class="grupo-formulario">
+
+                            <h3>
+                                Pagamento
+                            </h3>
+
+                            <div class="linha-formulario">
+
+                                <div class="campo-formulario">
+
+                                    <label for="forma-pagamento">
+                                        Forma de pagamento
+                                    </label>
+
+                                    <select
+                                        id="forma-pagamento"
+                                        name="forma-pagamento"
+                                        required
+                                    >
+
+                                        <option value="pix" selected>
+                                            Pix
+                                        </option>
+
+                                        <option value="cartao">
+                                            Cartão
+                                        </option>
+
+                                        <option value="dinheiro">
+                                            Dinheiro
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="campo-formulario">
+
+                                    <label for="valor">
+                                        Valor da diária
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="valor"
+                                        name="valor"
+                                        value="R$ 95,00"
+                                        readonly
+                                    >
+
+                                </div>
+
+                            </div>
+
+                            <div class="linha-formulario">
+
+                                <div class="campo-formulario">
+
+                                    <label for="diarias">
+                                        Quantidade de diárias
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="diarias"
+                                        name="diarias"
+                                        value="4"
+                                        min="1"
+                                        required
+                                    >
+
+                                </div>
+
+                                <div class="campo-formulario">
+
+                                    <label for="total">
+                                        Valor total
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="total"
+                                        name="total"
+                                        value="R$ 380,00"
+                                        readonly
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="acoes-formulario">
+
+                            <button
+                                type="submit"
+                                class="botao-principal"
+                            >
+                                Salvar Alterações
+                            </button>
+
+                            <button
+                                type="reset"
+                                class="botao-secundario"
+                            >
+                                Restaurar
+                            </button>
+
+                            <a
+                                href="reservas.html"
+                                class="botao-cancelar"
+                            >
+                                Cancelar
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
