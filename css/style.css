@@ -307,8 +307,9 @@ a:hover {
     color: #f97316;
     background-color: #fff7ed;
     font-size: 23px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
-
 .area-principal {
     padding: 35px 40px 50px;
     background-color: #fffaf5;
@@ -478,6 +479,12 @@ a:hover {
     margin-top: 25px;
 }
 
+.acoes-dashboard .botao-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 /* =========================
    TABELAS
    ========================= */
