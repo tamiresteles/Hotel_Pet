@@ -970,3 +970,29 @@ a:hover {
     }
 
 }
+.botoes-visualizar-pet {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.botoes-visualizar-pet a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
+}
+.botoes-visualizar-usuario {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.botoes-visualizar-usuario a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
+}

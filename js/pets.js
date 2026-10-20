@@ -1,4 +1,5 @@
 
+
 document.addEventListener("DOMContentLoaded", function () {
     const formulario = document.getElementById("formulario-pet");
 
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const tutorSelect = document.getElementById("tutor");
         const tutor = tutorSelect.options[tutorSelect.selectedIndex].text;
         const observacoes = document.getElementById("observacoes").value.trim();
+        const arquivoFoto = document.getElementById("foto").files[0];
 
         const pets = JSON.parse(localStorage.getItem("pets")) || [];
 
@@ -32,12 +34,29 @@ document.addEventListener("DOMContentLoaded", function () {
             status: "Ativo"
         };
 
-        pets.push(novoPet);
+        function salvarPet() {
+            pets.push(novoPet);
+            localStorage.setItem("pets", JSON.stringify(pets));
 
-        localStorage.setItem("pets", JSON.stringify(pets));
+            alert("Pet cadastrado com sucesso!");
+            window.location.href = "pets.html";
+        }
 
-        alert("Pet cadastrado com sucesso!");
+        if (arquivoFoto) {
+            const leitor = new FileReader();
 
-        window.location.href = "pets.html";
+            leitor.onload = function () {
+                novoPet.foto = leitor.result;
+                salvarPet();
+            };
+
+            leitor.onerror = function () {
+                alert("Não foi possível carregar a foto. Tente escolher outra imagem.");
+            };
+
+            leitor.readAsDataURL(arquivoFoto);
+        } else {
+            salvarPet();
+        }
     });
 });
