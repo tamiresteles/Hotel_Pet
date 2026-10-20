@@ -22,7 +22,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let pets = JSON.parse(localStorage.getItem("pets")) || [];
 
-    let pet = pets.find(function (animal) {
+    const dadosDemonstrativos = {
+        "001": { sexo: "macho", porte: "grande" },
+        "002": { sexo: "femea", porte: "pequeno" },
+        "003": { sexo: "femea", porte: "pequeno" },
+        "004": { sexo: "macho", porte: "medio" },
+        "005": { sexo: "macho", porte: "pequeno" }
+    };
+
+    // Preenche sexo e porte dos pets iniciais sem apagar outros dados.
+    pets = pets.map(function (animal) {
+        const dados = dadosDemonstrativos[String(animal.id)];
+
+        if (dados) {
+            if (!animal.sexo) {
+                animal.sexo = dados.sexo;
+            }
+
+            if (!animal.porte) {
+                animal.porte = dados.porte;
+            }
+        }
+
+        return animal;
+    });
+
+    localStorage.setItem("pets", JSON.stringify(pets));
+
+    const pet = pets.find(function (animal) {
         return String(animal.id) === String(idPet || campos.id.value);
     });
 
@@ -63,8 +90,12 @@ document.addEventListener("DOMContentLoaded", function () {
             pet.idade = campos.idade.value;
             pet.sexo = campos.sexo.value;
             pet.porte = campos.porte.value;
-            pet.tutor = campos.tutor.options[campos.tutor.selectedIndex].text;
-            pet.status = campos.status.value === "ativo" ? "Ativo" : "Inativo";
+            pet.tutor = campos.tutor.options[
+                campos.tutor.selectedIndex
+            ].text;
+            pet.status = campos.status.value === "ativo"
+                ? "Ativo"
+                : "Inativo";
             pet.observacoes = campos.observacoes.value.trim();
 
             if (fotoAtualizada) {
@@ -78,7 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (indice !== -1) {
                 pets[indice] = pet;
                 localStorage.setItem("pets", JSON.stringify(pets));
+
                 alert("Pet atualizado com sucesso!");
+
                 window.location.href = "visualizar-pet.html?id=" +
                     encodeURIComponent(pet.id);
             }
