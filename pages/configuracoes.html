@@ -2,15 +2,10 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Hotel Pet - Configurações</title>
-
     <link rel="stylesheet" href="../css/style.css">
-
 </head>
 
 <body>
@@ -22,35 +17,19 @@
             <h1>Hotel Pet</h1>
 
             <nav>
+                <a href="dashboard.html">Início</a>
+                <a href="pets.html">Pet</a>
+                <a href="usuarios.html">Usuário</a>
 
-                <a href="dashboard.html">
-                    Início
-                </a>
-
-                <a href="pets.html">
-                    Pet
-                </a>
-
-                <a href="usuarios.html">
-                    Usuário
-                </a>
-
-                <a
-                    href="configuracoes.html"
-                    class="menu-ativo"
-                >
+                <a href="configuracoes.html" class="menu-ativo">
                     Configurações
                 </a>
 
-                <a href="reservas.html">
-                    Reservas
+                <a href="reservas.html">Reservas</a>
+
+                <a href="../index.html" onclick="return confirm('Deseja realmente sair do Hotel Pet?');">
+                    Sair
                 </a>
-                
-<a href="../index.html" onclick="return confirm('Deseja realmente sair do Hotel Pet?');">
-    Sair
-</a>
-
-
             </nav>
 
         </aside>
@@ -61,14 +40,11 @@
 
                 <div></div>
 
-                <a
-                    href="perfil.html"
-                    class="perfil-topo"
-                >
+                <a href="perfil.html" class="perfil-topo">
 
                     <span class="icone-usuario" aria-label="Perfil do usuário">
-    👤
-</span>
+                        👤
+                    </span>
 
                     <span id="nome-usuario-topo">Camila Oliveira</span>
 
@@ -79,56 +55,32 @@
             <section class="area-principal">
 
                 <div class="breadcrumb">
-
-                    <a href="dashboard.html">
-                        Home
-                    </a>
-
+                    <a href="dashboard.html">Home</a>
                     <span>/</span>
-
-                    <strong>
-                        Configurações
-                    </strong>
-
+                    <strong>Configurações</strong>
                 </div>
 
                 <div class="cabecalho-pagina">
 
                     <div>
-
-                        <h2>
-                            Configurações
-                        </h2>
-
-                        <p>
-                            Gerencie as configurações do Hotel Pet.
-                        </p>
-
+                        <h2>Configurações</h2>
+                        <p>Gerencie as configurações do Hotel Pet.</p>
                     </div>
 
                 </div>
 
                 <section class="painel-formulario">
 
-                    <form
-                        action="configuracoes.html"
-                        method="get"
-                    >
+                    <form action="configuracoes.html" method="get">
 
                         <div class="grupo-formulario">
 
-                            <h3>
-                                Configurações da hospedagem
-                            </h3>
+                            <h3>Configurações da hospedagem</h3>
 
                             <div class="linha-formulario">
 
                                 <div class="campo-formulario">
-
-                                    <label for="valor-diaria">
-                                        Valor da diária
-                                    </label>
-
+                                    <label for="valor-diaria">Valor da diária</label>
                                     <input
                                         type="text"
                                         id="valor-diaria"
@@ -136,15 +88,10 @@
                                         value="R$ 95,00"
                                         required
                                     >
-
                                 </div>
 
                                 <div class="campo-formulario">
-
-                                    <label for="vagas">
-                                        Número de vagas disponíveis
-                                    </label>
-
+                                    <label for="vagas">Número de vagas disponíveis</label>
                                     <input
                                         type="number"
                                         id="vagas"
@@ -153,7 +100,6 @@
                                         min="1"
                                         required
                                     >
-
                                 </div>
 
                             </div>
@@ -162,18 +108,12 @@
 
                         <div class="grupo-formulario">
 
-                            <h3>
-                                Informações do sistema
-                            </h3>
+                            <h3>Informações do sistema</h3>
 
                             <div class="linha-formulario">
 
                                 <div class="campo-formulario">
-
-                                    <label for="nome-hotel">
-                                        Nome do estabelecimento
-                                    </label>
-
+                                    <label for="nome-hotel">Nome do estabelecimento</label>
                                     <input
                                         type="text"
                                         id="nome-hotel"
@@ -181,15 +121,10 @@
                                         value="Hotel Pet"
                                         required
                                     >
-
                                 </div>
 
                                 <div class="campo-formulario">
-
-                                    <label for="responsavel">
-                                        Gerente responsável
-                                    </label>
-
+                                    <label for="responsavel">Gerente responsável</label>
                                     <input
                                         type="text"
                                         id="responsavel"
@@ -197,7 +132,6 @@
                                         value="Camila Oliveira"
                                         readonly
                                     >
-
                                 </div>
 
                             </div>
@@ -206,49 +140,35 @@
 
                         <div class="grupo-formulario">
 
-                            <h3>
-                                Preferências
-                            </h3>
+                            <h3>Preferências</h3>
 
                             <div class="linha-formulario">
 
                                 <div class="campo-formulario">
-
-                                    <label for="check-in">
-                                        Horário de entrada
-                                    </label>
-
+                                    <label for="check-in">Horário de entrada</label>
                                     <input
                                         type="time"
                                         id="check-in"
                                         name="check-in"
                                         value="08:00"
                                     >
-
                                 </div>
 
                                 <div class="campo-formulario">
-
-                                    <label for="check-out">
-                                        Horário de saída
-                                    </label>
-
+                                    <label for="check-out">Horário de saída</label>
                                     <input
                                         type="time"
                                         id="check-out"
                                         name="check-out"
                                         value="18:00"
                                     >
-
                                 </div>
 
                             </div>
 
                             <div class="campo-formulario campo-completo">
 
-                                <label for="observacoes">
-                                    Observações gerais
-                                </label>
+                                <label for="observacoes">Observações gerais</label>
 
                                 <textarea
                                     id="observacoes"
@@ -263,19 +183,17 @@
 
                         <div class="acoes-formulario">
 
-                            <button
-                                type="submit"
-                                class="botao-principal"
-                            >
+                            <button type="submit" class="botao-principal">
                                 Salvar Configurações
                             </button>
 
-                            <button
-                                type="reset"
-                                class="botao-secundario"
-                            >
+                            <button type="reset" class="botao-secundario">
                                 Restaurar
                             </button>
+
+                            <a href="dashboard.html" class="botao-secundario">
+                                Voltar
+                            </a>
 
                         </div>
 
@@ -291,6 +209,7 @@
 
     <script src="../js/configuracoes.js"></script>
     <script src="../js/nome-usuario.js"></script>
+
 </body>
 
 </html>
