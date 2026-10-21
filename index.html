@@ -76,7 +76,7 @@
 
                     </label>
 
-                    <a href="#">Esqueci minha senha</a>
+                   <a href="pages/recuperar-senha.html">Esqueci minha senha</a>
 
                 </div>
 
@@ -97,15 +97,17 @@
 
             <div class="login-google">
 
-                <button type="button">
+    <button type="button" id="botao-google">
 
-                    <span class="rede-google">G</span>
+        <span class="rede-google">G</span>
 
-                    Continuar com Google
+        Continuar com Google
 
-                </button>
+    </button>
 
-            </div>
+</div>
+
+<p id="mensagem-google" role="status"></p>
 
             <p class="criar-conta-login">
 
@@ -127,7 +129,39 @@
         </section>
 
     </main>
+<script>
+    document.getElementById("botao-google")
+        .addEventListener("click", function () {
+            document.getElementById("mensagem-google")
+                .textContent =
+                "O login com Google não está disponível nesta versão demonstrativa.";
+        });
+</script>
+<script>
+    const campoUsuario = document.getElementById("usuario");
+    const lembrarDados = document.querySelector('input[name="lembrar"]');
 
+    // Recupera o nome de usuário salvo anteriormente.
+    const usuarioSalvo = localStorage.getItem("hotelPetUsuario");
+
+    if (usuarioSalvo) {
+        campoUsuario.value = usuarioSalvo;
+        lembrarDados.checked = true;
+    }
+
+    // Salva apenas o nome de usuário, nunca a senha.
+    document.querySelector(".login-formulario form")
+        .addEventListener("submit", function () {
+            if (lembrarDados.checked) {
+                localStorage.setItem(
+                    "hotelPetUsuario",
+                    campoUsuario.value.trim()
+                );
+            } else {
+                localStorage.removeItem("hotelPetUsuario");
+            }
+        });
+</script>
 </body>
 
 </html>

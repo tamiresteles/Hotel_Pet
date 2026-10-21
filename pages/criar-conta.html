@@ -19,11 +19,10 @@
 
         <section class="login-imagem">
 
-            <img
-                src="../img/hotel-pet.png"
-                alt="Hotel Pet"
-            >
-
+           <img
+    src="../imagens/hotel-pet.png"
+    alt="Hotel Pet"
+>
         </section>
 
         <section class="login-formulario">
@@ -40,9 +39,7 @@
 
             <h2>Criar Conta</h2>
 
-            <form
-                action="../index.html"
-                method="get"
+            <form id="form-criar-conta">
             >
 
                 <div class="campo-login">
@@ -134,6 +131,8 @@
 
             </form>
 
+                 <p id="mensagem-cadastro" role="status"></p>
+
             <p class="criar-conta-login">
 
                 Já possui uma conta?
@@ -147,6 +146,27 @@
         </section>
 
     </main>
+    <script>
+        document.getElementById("form-criar-conta")
+            .addEventListener("submit", function (evento) {
+                evento.preventDefault();
+
+                const senha = document.getElementById("senha").value;
+                const confirmarSenha =
+                    document.getElementById("confirmar-senha").value;
+
+                const mensagem =
+                    document.getElementById("mensagem-cadastro");
+
+                if (senha !== confirmarSenha) {
+                    mensagem.textContent = "As senhas não coincidem.";
+                    return;
+                }
+
+                mensagem.textContent =
+                    "Cadastro demonstrativo concluído! Os dados não foram salvos.";
+            });
+    </script>
 
 </body>
 

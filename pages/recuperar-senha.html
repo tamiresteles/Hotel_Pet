@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Pet - Recuperar Senha</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="pagina-login">
+
+    <main class="login-container">
+
+        <section class="login-imagem">
+            <img src="../imagens/hotel-pet.png" alt="Hotel Pet">
+        </section>
+
+        <section class="login-formulario">
+
+            <div class="login-cabecalho">
+                <h1>Hotel Pet</h1>
+                <p>Sistema de gerenciamento de hospedagem para Pets</p>
+            </div>
+
+            <h2>Recuperar senha</h2>
+
+            <p>
+                Informe seu e-mail para solicitar a recuperação de senha.
+            </p>
+
+            <form id="form-recuperacao">
+
+                <div class="campo-login">
+                    <label for="email">E-mail cadastrado</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Digite seu e-mail"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="botao-entrar">
+                    Solicitar recuperação
+                </button>
+
+            </form>
+
+            <p id="mensagem-recuperacao" role="status"></p>
+
+            <p class="criar-conta-login">
+                <a href="../index.html">Voltar para o login</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <script>
+        document.getElementById("form-recuperacao")
+            .addEventListener("submit", function (evento) {
+                evento.preventDefault();
+
+                document.getElementById("mensagem-recuperacao")
+                    .textContent =
+                    "Solicitação demonstrativa registrada. A recuperação real de senha ainda não está disponível .";
+            });
+    </script>
+
+</body>
+</html>

@@ -54,4 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     foto.alt = "Foto de " + pet.nome;
+    
+        const botaoEditar = document.getElementById("botao-editar-pet");
+
+    if (botaoEditar) {
+        botaoEditar.href = "editar-pet.html?id=" + encodeURIComponent(pet.id);
+    }
 });
