@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const formulario = document.getElementById("formulario-pet");
 

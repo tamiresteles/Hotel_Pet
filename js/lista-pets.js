@@ -98,48 +98,59 @@ document.addEventListener("DOMContentLoaded", function () {
             (pet.nome || "").toLowerCase().includes(termo)
         );
 
-        if (tabela) {
-            tabela.innerHTML = "";
+      if (tabela) {
+    tabela.innerHTML = "";
 
-            petsFiltrados.forEach(function (pet, indice) {
-                const linha = document.createElement("tr");
+    if (petsFiltrados.length === 0) {
+        const linha = document.createElement("tr");
+        const celula = document.createElement("td");
 
-                const dados = [
-                    String(indice + 1).padStart(3, "0"),
-                    pet.nome || "",
-                    pet.raca || "",
-                    pet.idade ? pet.idade + " anos" : "",
-                    pet.tutor || "",
-                    pet.status || "Ativo"
-                ];
+        celula.colSpan = 7;
+        celula.textContent = "Nenhum pet encontrado.";
+        celula.style.textAlign = "center";
 
-                dados.forEach(function (dado) {
-                    const celula = document.createElement("td");
-                    celula.textContent = dado;
-                    linha.appendChild(celula);
-                });
+        linha.appendChild(celula);
+        tabela.appendChild(linha);
+    } else {
+        petsFiltrados.forEach(function (pet, indice) {
+            const linha = document.createElement("tr");
 
-                const acoes = document.createElement("td");
+            const dados = [
+                String(indice + 1).padStart(3, "0"),
+                pet.nome || "",
+                pet.raca || "",
+                pet.idade ? pet.idade + " anos" : "",
+                pet.tutor || "",
+                pet.status || "Ativo"
+            ];
 
-                const visualizar = document.createElement("a");
-                visualizar.href = "visualizar-pet.html?id=" +
-                    encodeURIComponent(pet.id);
-                visualizar.textContent = "Visualizar";
-
-                const editar = document.createElement("a");
-                editar.href = "editar-pet.html?id=" +
-                    encodeURIComponent(pet.id);
-                editar.textContent = "Editar";
-
-                acoes.appendChild(visualizar);
-                acoes.appendChild(document.createTextNode(" "));
-                acoes.appendChild(editar);
-
-                linha.appendChild(acoes);
-                tabela.appendChild(linha);
+            dados.forEach(function (dado) {
+                const celula = document.createElement("td");
+                celula.textContent = dado;
+                linha.appendChild(celula);
             });
-        }
 
+            const acoes = document.createElement("td");
+
+            const visualizar = document.createElement("a");
+            visualizar.href = "visualizar-pet.html?id=" +
+                encodeURIComponent(pet.id);
+            visualizar.textContent = "Visualizar";
+
+            const editar = document.createElement("a");
+            editar.href = "editar-pet.html?id=" +
+                encodeURIComponent(pet.id);
+            editar.textContent = "Editar";
+
+            acoes.appendChild(visualizar);
+            acoes.appendChild(document.createTextNode(" "));
+            acoes.appendChild(editar);
+
+            linha.appendChild(acoes);
+            tabela.appendChild(linha);
+        });
+    }
+}
         if (contador) {
             contador.textContent = petsFiltrados.length +
                 (petsFiltrados.length === 1
@@ -148,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    if (pesquisa) {
+           if (pesquisa) {
         pesquisa.addEventListener("input", carregarPets);
     }
 
