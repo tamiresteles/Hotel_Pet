@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const nomeSalvo = localStorage.getItem("nomeCompletoUsuario");
 
