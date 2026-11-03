@@ -6,49 +6,73 @@ document.addEventListener("DOMContentLoaded", function () {
     const campoEmail = document.getElementById("email");
     const campoFuncao = document.getElementById("funcao");
 
-    if (!tabela) {
-        return;
+    if (!tabela) return;
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    function normalizar(texto) {
+        return texto
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
     }
 
-    const linhasOriginais = Array.from(tabela.querySelectorAll("tr"));
-
     function pesquisarUsuarios() {
-        const nome = campoNome.value.trim().toLowerCase();
-        const email = campoEmail.value.trim().toLowerCase();
-        const funcao = campoFuncao.value.trim().toLowerCase();
+        const nome = normalizar(campoNome.value.trim());
+        const email = normalizar(campoEmail.value.trim());
+        const funcao = normalizar(campoFuncao.value.trim());
 
-        let totalEncontrados = 0;
+        const encontrados = usuarios.filter(function (usuario) {
+            const nomeCompleto = normalizar(
+                usuario.nome + " " + (usuario.sobrenome || "")
+            );
 
-        linhasOriginais.forEach(function (linha) {
-            const celulas = linha.querySelectorAll("td");
+            return nomeCompleto.includes(nome) &&
+                normalizar(usuario.email).includes(email) &&
+                (!funcao || normalizar(usuario.funcao) === funcao);
+        });
 
-            const nomeUsuario = celulas[1].textContent.trim().toLowerCase();
-            const emailUsuario = celulas[2].textContent.trim().toLowerCase();
-            const funcaoUsuario = celulas[4].textContent.trim().toLowerCase();
+        tabela.innerHTML = "";
 
-            const correspondeNome = nomeUsuario.includes(nome);
-            const correspondeEmail = emailUsuario.includes(email);
-            const correspondeFuncao =
-                !funcao ||
-                funcaoUsuario === funcao ||
-                (funcao === "funcionario" &&
-                    funcaoUsuario === "funcionário");
+        encontrados.forEach(function (usuario) {
+            const linha = document.createElement("tr");
 
-            const mostrar =
-                correspondeNome &&
-                correspondeEmail &&
-                correspondeFuncao;
+            const nomeCompleto =
+                usuario.nome + " " + (usuario.sobrenome || "");
 
-            linha.style.display = mostrar ? "" : "none";
+            const funcaoExibida = {
+                cliente: "Cliente",
+                funcionario: "Funcionário",
+                gerente: "Gerente"
+            };
 
-            if (mostrar) {
-                totalEncontrados++;
-            }
+            linha.innerHTML = `
+                <td>${usuario.id}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>${funcaoExibida[usuario.funcao] || usuario.funcao}</td>
+                <td>${usuario.status === "ativo" ? "Ativo" : "Inativo"}</td>
+                <td>
+                    <a href="visualizar-usuario.html?id=${usuario.id}">
+                        Visualizar
+                    </a>
+                    <a href="editar-usuario.html?id=${usuario.id}">
+                        Editar
+                    </a>
+                </td>
+            `;
+
+            linha.children[1].textContent = nomeCompleto;
+            linha.children[2].textContent = usuario.email;
+            linha.children[3].textContent = usuario.telefone || "";
+
+            tabela.appendChild(linha);
         });
 
         let mensagem = document.getElementById("nenhum-usuario-encontrado");
 
-        if (totalEncontrados === 0) {
+        if (encontrados.length === 0) {
             if (!mensagem) {
                 mensagem = document.createElement("p");
                 mensagem.id = "nenhum-usuario-encontrado";
@@ -62,35 +86,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (contador) {
             contador.textContent =
-                totalEncontrados +
-                (totalEncontrados === 1
+                encontrados.length +
+                (encontrados.length === 1
                     ? " usuário encontrado"
                     : " usuários encontrados");
         }
     }
 
-    if (campoNome) {
-        campoNome.addEventListener("input", pesquisarUsuarios);
-    }
-
-    if (campoEmail) {
-        campoEmail.addEventListener("input", pesquisarUsuarios);
-    }
-
-    if (campoFuncao) {
-        campoFuncao.addEventListener("change", pesquisarUsuarios);
-    }
-
-    const formulario = campoNome
-        ? campoNome.closest("form")
-        : null;
-
-    if (formulario) {
-        formulario.addEventListener("submit", function (event) {
-            event.preventDefault();
-            pesquisarUsuarios();
-        });
-    }
+    campoNome.addEventListener("input", pesquisarUsuarios);
+    campoEmail.addEventListener("input", pesquisarUsuarios);
+    campoFuncao.addEventListener("change", pesquisarUsuarios);
 
     pesquisarUsuarios();
 });
