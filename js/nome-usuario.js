@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     const nomeSalvo = localStorage.getItem("nomeCompletoUsuario");
 
@@ -12,5 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (nomeSaudacao) {
             nomeSaudacao.textContent = nomeSalvo;
         }
+    }
+
+    const nomeHotel = localStorage.getItem("nomeHotel");
+    const nomeHotelMenu = document.getElementById("nome-hotel-menu");
+
+    if (nomeHotelMenu && nomeHotel) {
+        nomeHotelMenu.textContent = nomeHotel;
     }
 });

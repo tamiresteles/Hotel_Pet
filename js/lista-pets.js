@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const floquinhoExiste = petsSalvos.some(
         pet => String(pet.id) === "005" ||
-        (pet.nome || "").toLowerCase() === "floquinho"
+            (pet.nome || "").toLowerCase() === "floquinho"
     );
 
     if (!floquinhoExiste) {
@@ -98,59 +98,114 @@ document.addEventListener("DOMContentLoaded", function () {
             (pet.nome || "").toLowerCase().includes(termo)
         );
 
-      if (tabela) {
-    tabela.innerHTML = "";
+        if (tabela) {
+            tabela.innerHTML = "";
 
-    if (petsFiltrados.length === 0) {
-        const linha = document.createElement("tr");
-        const celula = document.createElement("td");
+            petsFiltrados.forEach(function (pet, indice) {
+                const linha = document.createElement("tr");
 
-        celula.colSpan = 7;
-        celula.textContent = "Nenhum pet encontrado.";
-        celula.style.textAlign = "center";
+                const dados = [
+                    String(indice + 1).padStart(3, "0"),
+                    pet.nome || "",
+                    pet.raca || "",
+                    pet.idade ? pet.idade + " anos" : "",
+                    pet.tutor || "",
+                    pet.status || "Ativo"
+                ];
 
-        linha.appendChild(celula);
-        tabela.appendChild(linha);
-    } else {
-        petsFiltrados.forEach(function (pet, indice) {
-            const linha = document.createElement("tr");
+                dados.forEach(function (dado) {
+                    const celula = document.createElement("td");
+                    celula.textContent = dado;
+                    linha.appendChild(celula);
+                });
 
-            const dados = [
-                String(indice + 1).padStart(3, "0"),
-                pet.nome || "",
-                pet.raca || "",
-                pet.idade ? pet.idade + " anos" : "",
-                pet.tutor || "",
-                pet.status || "Ativo"
-            ];
+                const acoes = document.createElement("td");
 
-            dados.forEach(function (dado) {
-                const celula = document.createElement("td");
-                celula.textContent = dado;
-                linha.appendChild(celula);
+                const visualizar = document.createElement("a");
+                visualizar.href = "visualizar-pet.html?id=" +
+                    encodeURIComponent(pet.id);
+                visualizar.textContent = "Visualizar";
+
+                const editar = document.createElement("a");
+                editar.href = "editar-pet.html?id=" +
+                    encodeURIComponent(pet.id);
+                editar.textContent = "Editar";
+
+                acoes.appendChild(visualizar);
+                acoes.appendChild(document.createTextNode(" "));
+                acoes.appendChild(editar);
+                acoes.appendChild(document.createTextNode(" "));
+
+                const excluir = document.createElement("a");
+                excluir.href = "#";
+                excluir.textContent = "Excluir";
+
+                excluir.addEventListener("click", function (event) {
+                    event.preventDefault();
+
+                    const reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+
+                    function normalizar(valor) {
+                        return String(valor || "")
+                            .trim()
+                            .toLowerCase()
+                            .normalize("NFD")
+                            .replace(/[\u0300-\u036f]/g, "");
+                    }
+
+                    const nomesOriginais = {
+                        "001": "max",
+                        "002": "belinha",
+                        "003": "nina",
+                        "004": "caramelo",
+                        "005": "floquinho"
+                    };
+
+                    const identificadoresPet = [
+                        pet.id,
+                        pet.nome,
+                        nomesOriginais[String(pet.id)]
+                    ].map(normalizar);
+
+                    const possuiReserva = reservas.some(function (reserva) {
+                        const petDaReserva = normalizar(reserva.pet);
+
+                        return identificadoresPet.includes(petDaReserva);
+                    });
+
+                    if (possuiReserva) {
+                        alert("Não é possível excluir este pet, pois ele possui reservas vinculadas.");
+                        return;
+                    }
+
+                    const confirmar = confirm(
+                        "Deseja realmente excluir o pet " + pet.nome + "?"
+                    );
+
+                    if (!confirmar) {
+                        return;
+                    }
+
+                    let petsAtualizados = JSON.parse(localStorage.getItem("pets")) || [];
+
+                    petsAtualizados = petsAtualizados.filter(function (item) {
+                        return String(item.id) !== String(pet.id);
+                    });
+
+                    localStorage.setItem("pets", JSON.stringify(petsAtualizados));
+
+                    alert("Pet excluído com sucesso!");
+
+                    carregarPets();
+                });
+
+                acoes.appendChild(excluir);
+
+                linha.appendChild(acoes);
+                tabela.appendChild(linha);
             });
+        }
 
-            const acoes = document.createElement("td");
-
-            const visualizar = document.createElement("a");
-            visualizar.href = "visualizar-pet.html?id=" +
-                encodeURIComponent(pet.id);
-            visualizar.textContent = "Visualizar";
-
-            const editar = document.createElement("a");
-            editar.href = "editar-pet.html?id=" +
-                encodeURIComponent(pet.id);
-            editar.textContent = "Editar";
-
-            acoes.appendChild(visualizar);
-            acoes.appendChild(document.createTextNode(" "));
-            acoes.appendChild(editar);
-
-            linha.appendChild(acoes);
-            tabela.appendChild(linha);
-        });
-    }
-}
         if (contador) {
             contador.textContent = petsFiltrados.length +
                 (petsFiltrados.length === 1
@@ -159,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-           if (pesquisa) {
+    if (pesquisa) {
         pesquisa.addEventListener("input", carregarPets);
     }
 

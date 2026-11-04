@@ -1,16 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Hotel Pet - Dashboard</title>
-
     <link rel="stylesheet" href="../css/style.css">
-
 </head>
 
 <body>
@@ -19,40 +15,18 @@
 
         <aside class="menu-lateral">
 
-            <h1>Hotel Pet</h1>
+            <h1 id="nome-hotel-menu">Hotel Pet</h1>
 
             <nav>
-
-                <a
-                    href="dashboard.html"
-                    class="menu-ativo"
-                >
-                    Início
+                <a href="dashboard.html" class="menu-ativo">Início</a>
+                <a href="pets.html">Pet</a>
+                <a href="usuarios.html">Usuário</a>
+                <a href="configuracoes.html">Configurações</a>
+                <a href="reservas.html">Reservas</a>
+                <a href="../index.html"
+                   onclick="return confirm('Deseja realmente sair do Hotel Pet?');">
+                    Sair
                 </a>
-
-                <a href="pets.html">
-                    Pet
-                </a>
-
-                <a href="usuarios.html">
-                    Usuário
-                </a>
-
-                <a href="configuracoes.html">
-                    Configurações
-                </a>
-
-                <a href="reservas.html">
-                    Reservas
-                </a>
-                
-
-<a href="../index.html" onclick="return confirm('Deseja realmente sair do Hotel Pet?');">
-    Sair
-</a>
-
-
-
             </nav>
 
         </aside>
@@ -63,18 +37,15 @@
 
                 <div></div>
 
-                <a
-                    href="perfil.html"
-                    class="perfil-topo"
-                >
+                <a href="perfil.html" class="perfil-topo">
 
                     <span class="icone-usuario" aria-label="Perfil do usuário">
-    👤
-</span>
+                        👤
+                    </span>
 
                     <span id="nome-usuario-topo">
-    Camila Oliveira
-</span>
+                        Camila Oliveira
+                    </span>
 
                 </a>
 
@@ -83,116 +54,68 @@
             <section class="area-principal">
 
                 <div class="breadcrumb">
-
-                    <a href="dashboard.html">
-                        Home
-                    </a>
-
+                    <a href="dashboard.html">Home</a>
                     <span>/</span>
-
-                    <strong>
-                        Dashboard
-                    </strong>
-
+                    <strong>Dashboard</strong>
                 </div>
 
                 <div class="cabecalho-pagina">
 
                     <div>
-
-                       
-<h2>
-    Olá, <span id="nome-usuario-saudacao">Camila Oliveira</span>!
-</h2>
-
+                        <h2>
+                            Olá, <span id="nome-usuario-saudacao">Camila Oliveira</span>!
+                        </h2>
 
                         <p>
                             Bem-vindo (a) ao painel de gerenciamento do Hotel Pet.
                         </p>
-
                     </div>
 
                 </div>
 
+                <!-- Indicadores do sistema -->
+
                 <section class="cards-resumo">
 
                     <div class="card-resumo">
-
                         <div>
-
-                            <span class="titulo-card">
-                                Pets hospedados
-                            </span>
-
-                            <strong>
-                                4
-                            </strong>
-
+                            <span class="titulo-card">Pets hospedados</span>
+                            <strong id="total-pets-dashboard">0</strong>
                         </div>
-
                     </div>
 
                     <div class="card-resumo">
-
                         <div>
-
-                            <span class="titulo-card">
-                                Reservas ativas
-                            </span>
-
-                            <strong>
-                                3
-                            </strong>
-
+                            <span class="titulo-card">Reservas ativas</span>
+                            <strong id="total-reservas-dashboard">0</strong>
                         </div>
-
                     </div>
 
                     <div class="card-resumo">
-
                         <div>
-
-                            <span class="titulo-card">
-                                Usuários cadastrados
-                            </span>
-
-                            <strong>
-                                6
-                            </strong>
-
+                            <span class="titulo-card">Usuários cadastrados</span>
+                            <strong id="total-usuarios-dashboard">0</strong>
                         </div>
-
                     </div>
 
                     <div class="card-resumo">
-
                         <div>
-
-                            <span class="titulo-card">
-                                Vagas disponíveis
-                            </span>
-
-                            <strong>
-                                5
-                            </strong>
-
+                            <span class="titulo-card">Vagas disponíveis</span>
+                            <strong id="total-vagas-dashboard">0</strong>
                         </div>
-
                     </div>
 
                 </section>
+
+                <!-- Próximas reservas -->
 
                 <section class="painel-dashboard">
 
                     <div class="cabecalho-secao">
 
-                        <h3>
-                            Próximas reservas
-                        </h3>
+                        <h3>Próximas reservas</h3>
 
-                        <a href="reservas.html">
-                            Ver todas
-                        </a>
+                        <a href="reservas.html">Ver todas</a>
 
                     </div>
 
@@ -201,123 +124,17 @@
                         <table>
 
                             <thead>
-
                                 <tr>
-
-                                    <th>
-                                        ID
-                                    </th>
-
-                                    <th>
-                                        Pet
-                                    </th>
-
-                                    <th>
-                                        Tutor
-                                    </th>
-
-                                    <th>
-                                        Entrada
-                                    </th>
-
-                                    <th>
-                                        Saída
-                                    </th>
-
-                                    <th>
-                                        Status
-                                    </th>
-
+                                    <th>ID</th>
+                                    <th>Pet</th>
+                                    <th>Tutor</th>
+                                    <th>Entrada</th>
+                                    <th>Saída</th>
+                                    <th>Status</th>
                                 </tr>
-
                             </thead>
 
-                            <tbody>
-
-                                <tr>
-
-                                    <td>
-                                        101
-                                    </td>
-
-                                    <td>
-                                        Max
-                                    </td>
-
-                                    <td>
-                                        Rafael Costa
-                                    </td>
-
-                                    <td>
-                                        22/08/2026
-                                    </td>
-
-                                    <td>
-                                        26/08/2026
-                                    </td>
-
-                                    <td>
-                                        Confirmada
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-
-                                    <td>
-                                        102
-                                    </td>
-
-                                    <td>
-                                        Belinha
-                                    </td>
-
-                                    <td>
-                                        Juliana Mendes
-                                    </td>
-
-                                    <td>
-                                        23/08/2026
-                                    </td>
-
-                                    <td>
-                                        25/08/2026
-                                    </td>
-
-                                    <td>
-                                        Agendada
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-
-                                    <td>
-                                        103
-                                    </td>
-
-                                    <td>
-                                        Nina
-                                    </td>
-
-                                    <td>
-                                        Pedro Henrique
-                                    </td>
-
-                                    <td>
-                                        24/08/2026
-                                    </td>
-
-                                    <td>
-                                        29/08/2026
-                                    </td>
-
-                                    <td>
-                                        Confirmada
-                                    </td>
-
-                                </tr>
-
+                            <tbody id="lista-proximas-reservas-dashboard">
                             </tbody>
 
                         </table>
@@ -326,36 +143,25 @@
 
                 </section>
 
+                <!-- Acesso rápido -->
+
                 <section class="painel-dashboard">
 
                     <div class="cabecalho-secao">
-
-                        <h3>
-                            Acesso rápido
-                        </h3>
-
+                        <h3>Acesso rápido</h3>
                     </div>
 
                     <div class="acoes-dashboard">
 
-                        <a
-                            href="cadastrar-pet.html"
-                            class="botao-secundario"
-                        >
+                        <a href="cadastrar-pet.html" class="botao-secundario">
                             Cadastrar Pet
                         </a>
 
-                        <a
-                            href="cadastrar-usuario.html"
-                            class="botao-secundario"
-                        >
+                        <a href="cadastrar-usuario.html" class="botao-secundario">
                             Cadastrar Usuário
                         </a>
 
-                        <a
-                            href="cadastrar-reserva.html"
-                            class="botao-secundario"
-                        >
+                        <a href="cadastrar-reserva.html" class="botao-secundario">
                             Nova Reserva
                         </a>
 
@@ -368,7 +174,9 @@
         </main>
 
     </div>
-<script src="../js/nome-usuario.js"></script>
+
+    <script src="../js/nome-usuario.js"></script>
+    <script src="../js/dashboard.js"></script>
 
 </body>
 

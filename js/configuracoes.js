@@ -51,3 +51,9 @@ formulario.addEventListener("reset", function() {
     localStorage.removeItem("checkOut");
     localStorage.removeItem("observacoes");
 });
+const nomeHotelMenu = document.getElementById("nome-hotel-menu");
+
+if (nomeHotelMenu) {
+    nomeHotelMenu.textContent =
+        localStorage.getItem("nomeHotel") || "Hotel Pet";
+}
